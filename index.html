@@ -8,6 +8,8 @@
 <body>
 <script>
 
+let computerScore=0;
+let humanScore=0;
 
 // create a function for computer choice
 function getComputerChoice(params) {
@@ -25,26 +27,64 @@ function getComputerChoice(params) {
     return "scissors"
     }
 }
- console.log(getComputerChoice());
+
 
 // create a function for human choice
 function getHumanChoice(){
 
-let humanChoice= prompt("choose between : Rock, Paper, Scissors")
+    let humanChoice= prompt("choose between : Rock, Paper, Scissors")
 
-if (humanChoice.toLowerCase()=="rock") {
-return "rock"
+    if (humanChoice.toLowerCase()=="rock") {
+    return "rock"
+    }
+    else if(humanChoice.toLowerCase()=="paper") 
+    {
+    return "paper"
+    }
+    else if(humanChoice.toLowerCase()=="scissors")
+    {
+    return "scissors"
+    }
+
 }
-else if(humanChoice.toLowerCase()=="paper") 
-{
-return "paper"
-}
-else if(humanChoice.toLowerCase()=="scissors")
-{
-return "scissors"
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice==computerChoice) {
+    console.log("Draw");
+    }
+
+    else if (humanChoice=="rock" && computerChoice=="paper" ||
+             humanChoice=="scissors" && computerChoice=="rock" ||
+             humanChoice=="paper" && computerChoice=="scissors")
+    {
+    console.log("Computer Wins");
+    computerScore++;
+    }
+
+    else if (humanChoice=="paper" && computerChoice=="rock" || 
+            humanChoice=="rock" && computerChoice=="scissors" || 
+            humanChoice=="scissors" && computerChoice=="paper")
+    {
+    console.log("human Wins");
+    humanScore++;
+    }
+    else
+    {
+        console.log("invalid input");
+        
+    }
 }
 
-} 
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+console.log(humanSelection);
+console.log(computerSelection);
+
+
+
+playRound(humanSelection, computerSelection);
+
+
 </script>
 </body>
 </html>
