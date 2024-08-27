@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
 
+
+// create a function for computer choice
+function getComputerChoice(params) {
+    let randomNumber =Math.floor(Math.random()*9)+1;
+
+    if (randomNumber<=3) {
+    return "rock"
+    }
+    else if(randomNumber<=6) 
+    {
+    return "paper"
+    }
+    else if(randomNumber<=9)
+    {
+    return "scissors"
+    }
+}
+ console.log(getComputerChoice());
+
+// create a function for human choice
+
+</script>
+</body>
+</html>
