@@ -3,107 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="javascript.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-<script>
 
-let computerScore=0;
-let humanScore=0;
+<button id="Rock">Rock</button>
+<button id="Paper">Paper</button>
+<button id="Scissors">Scissors</button>
+<div>
+    <div id="Result">
 
-// create a function for computer choice
-function getComputerChoice(params) {
-    let randomNumber =Math.floor(Math.random()*9)+1;
-
-    if (randomNumber<=3) {
-    console.log("Computer : rock");
-    return "rock"
+    </div>
     
-    
-    }
-    else if(randomNumber<=6) 
-    {
-    console.log("Computer : paper");
-    return "paper"
-    }
-    else if(randomNumber<=9)
-    {
-    console.log("Computer : scissors");
-    return "scissors"
-    }
-        }
+</div>
 
-
-// create a function for human choice
-function getHumanChoice(){
-
-let humanChoice= prompt("choose between : Rock, Paper, Scissors")
-
-if (humanChoice.toLowerCase()=="rock") {
-    console.log("human : rock");
-return "rock"
-}
-else if(humanChoice.toLowerCase()=="paper") 
-{
-    console.log("human : paper");
-return "paper"
-}
-else if(humanChoice.toLowerCase()=="scissors")
-{
-    console.log("human : scissors");
-return "scissors"
-}
-}
-
-
-
-
-
-function playGame(params) {
-
-    function playRound(humanChoice, computerChoice) {
-        
-
-      
-    if (humanChoice==computerChoice) {
-    console.log("Draw");
-    }
-
-    else if (humanChoice=="rock" && computerChoice=="paper" ||
-             humanChoice=="scissors" && computerChoice=="rock" ||
-             humanChoice=="paper" && computerChoice=="scissors")
-    {
-    console.log("Computer Wins");
-    computerScore++;
-    }
-
-    else if (humanChoice=="paper" && computerChoice=="rock" || 
-            humanChoice=="rock" && computerChoice=="scissors" || 
-            humanChoice=="scissors" && computerChoice=="paper")
-    {
-    console.log("human Wins");
-    humanScore++;
-    }
-    else
-    {
-        console.log("invalid input");
-        
-    }
-}
-
-
-
-
-playRound(getHumanChoice(),getComputerChoice());
-playRound(getHumanChoice(),getComputerChoice());
-playRound(getHumanChoice(),getComputerChoice());
-playRound(getHumanChoice(),getComputerChoice());
-playRound(getHumanChoice(),getComputerChoice());
-}
-playGame();
-console.log(`Human Score is ${humanScore}
-Computer Score is ${computerScore}`);
-
-</script>
 </body>
 </html>
